@@ -1,17 +1,25 @@
 import { FlatList } from "react-native";
 import products from "../assets/products.json";
-import ProductListItem from "../components/ProductListItem";
-import { Button, ButtonText } from "../components/ui/button";
+import ProductListItem from "@/components/ProductListItem";
 const HomeScreen = () => {
   return (
     <>
       <FlatList
         data={products}
-        renderItem={({ item }) => <ProductListItem product={item.name} />}
+        keyExtractor={(item) => item.id.toString()}
+        numColumns={2}
+        contentContainerClassName="gap-2"
+        columnWrapperClassName="gap-2"
+        renderItem={({ item }) => (
+          <ProductListItem
+            id={item.id}
+            name={item.name}
+            description={item.description}
+            image={item.image}
+            price={item.price}
+          />
+        )}
       />
-      <Button>
-        <ButtonText>hello</ButtonText>
-      </Button>
     </>
   );
 };
