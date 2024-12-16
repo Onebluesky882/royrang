@@ -1,8 +1,7 @@
 import { Box } from "@/components/ui/box";
-import { Button, ButtonText } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Heading } from "@/components/ui/heading";
-import { Icon } from "@/components/ui/icon";
+
 import { Image } from "@/components/ui/image";
 import { Text } from "@/components/ui/text";
 import { VStack } from "@/components/ui/vstack";
@@ -30,7 +29,10 @@ const ProductListItem = ({
   return (
     <Link href={`product/${formattedName}`} asChild>
       <Pressable className="flex-1">
-        <Card className="p-5 rounded-lg max-w-[460px] flex-1 " key={id}>
+        <Card
+          className="p-5 rounded-lg max-w-[460px] flex-1  mx-auto  "
+          key={id}
+        >
           <Image
             source={image}
             className="mb-6 h-[240px] w-full rounded-md aspect-[4/3]  mx-auto"

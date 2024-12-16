@@ -1,15 +1,16 @@
-import { FlatList } from "react-native";
+import { FlatList, useWindowDimensions } from "react-native";
 import products from "../assets/products.json";
 import ProductListItem from "@/components/ProductListItem";
 const HomeScreen = () => {
+  const { width } = useWindowDimensions();
   return (
     <>
       <FlatList
-        data={products}
+        data={products.slice(0, 9)}
         keyExtractor={(item) => item.id.toString()}
-        numColumns={2}
+        numColumns={width >= 700 ? 3 : 2}
         contentContainerClassName="gap-2"
-        columnWrapperClassName="gap-2"
+        columnWrapperClassName=" max-w-[960px] mx-auto"
         renderItem={({ item }) => (
           <ProductListItem
             id={item.id}
