@@ -1,41 +1,34 @@
-import { Box } from "@/components/ui/box";
-import { Button, ButtonText } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Heading } from "@/components/ui/heading";
-import { Icon } from "@/components/ui/icon";
-import { Image } from "@/components/ui/image";
 import { Text } from "@/components/ui/text";
-import { VStack } from "@/components/ui/vstack";
-import React from "react";
-import { Link, useLocalSearchParams } from "expo-router";
-
-type ProductListItemProps = {
+import { Image } from "@/components/ui/image";
+import { Heading } from "@/components/ui/heading";
+import { VStack } from "../ui/vstack";
+import { Box } from "../ui/box";
+import { Button, ButtonText } from "../ui/button";
+type ProductDetailCardProp = {
   id: number;
   name: string;
   description: string;
   image: string;
   price: number;
 };
-const ProductListItem = ({
-  id,
-  name,
-  description,
-  image,
-  price,
-}: ProductListItemProps) => {
-  const formattedName =
-    typeof name === "string" ? name.replace(/\s+/g, "-").toLowerCase() : "";
 
+const ProductDetailCard = ({
+  description,
+  id,
+  image,
+  name,
+  price,
+}: ProductDetailCardProp) => {
   return (
     <Card className="p-5 rounded-lg max-w-[460px] flex-1 " key={id}>
-      <Link href={`product/${formattedName}`}>
-        <Image
-          source={image}
-          className="mb-6 h-[240px] w-full rounded-md aspect-[4/3]  mx-auto"
-          alt="image"
-          resizeMode="contain"
-        />
-      </Link>
+      <Image
+        source={image}
+        className="mb-6 h-[240px] w-full rounded-md aspect-[4/3]  mx-auto"
+        alt="image"
+        resizeMode="contain"
+      />
+
       <Text className="text-sm font-normal mb-2 text-typography-700">
         {name}
       </Text>
@@ -61,4 +54,4 @@ const ProductListItem = ({
     </Card>
   );
 };
-export default ProductListItem;
+export default ProductDetailCard;
