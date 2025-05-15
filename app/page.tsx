@@ -1,4 +1,4 @@
-import { GetStaticProps, Metadata } from "next";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "royrang กินอะไรดี | แนะนำเมนูอาหาร สุ่มเมนูเด็ด สร้างเมนูอร่อย",
