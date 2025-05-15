@@ -1,6 +1,6 @@
 // next-sitemap.config.js
 module.exports = {
-  siteUrl: "https://your-site.com",
+  siteUrl: "https://royrang.vercel.app/",
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [

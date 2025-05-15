@@ -28,8 +28,11 @@ export default function RootLayout({
         property="og:description"
         content="ไอเดียเมนูอาหารมากมาย พร้อมฟีเจอร์สุ่มเมนูและร้านอาหารใกล้คุณ"
       />
-      <meta property="og:image" content="https://your-site.com/og-image.jpg" />
-      <meta property="og:url" content="https://your-site.com" />
+      <meta
+        property="og:image"
+        content="https://royrang.vercel.app/og-image.jpg"
+      />
+      <meta property="og:url" content="https://royrang.vercel.app/" />
       <meta name="twitter:card" content="summary_large_image" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
